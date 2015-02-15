@@ -12,6 +12,26 @@ angular.module('dz4.main', ['ui.router'])
             only: ['user']
           }
         }
+      })
+      .state('main.create', {
+        url: '/create',
+        templateUrl: 'app/main/create/create.html',
+        controller: 'CreateCtrl',
+        data:{
+          permissions: {
+            only: ['user']
+          }
+        }
+      })
+      .state('main.update', {
+        url: '/update',
+        templateUrl: 'app/main/update/update.html',
+        controller: 'UpdateCtrl',
+        data:{
+          permissions: {
+            only: ['user']
+          }
+        }
       });
 
   });
