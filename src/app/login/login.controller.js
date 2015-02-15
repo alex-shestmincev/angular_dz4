@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('dz4')
+angular.module('dz4.login')
   .controller('LoginCtrl',['$scope','$state','loginService', function ($scope,$state,loginService) {
 
     if($state.params.logout === true){

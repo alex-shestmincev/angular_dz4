@@ -2,7 +2,7 @@ angular.module('dz4').factory('loginService',['$q',function($q){
 
   function getUser(){
     var user = localStorage.getItem('username');
-    return user ? $q.when(user) : $q.reject();
+    return user;// ? $q.when(user) : $q.reject();
   }
 
   function logOut(){
