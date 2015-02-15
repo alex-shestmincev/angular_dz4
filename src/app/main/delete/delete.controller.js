@@ -15,10 +15,8 @@ angular.module('dz4.main')
     $scope.surname = employee.surname;
 
     $scope.Delete = function(idx) {
-
       mainService.Remove(idx);
-      $scope.employees = mainService.List();
-
+      $scope.$parent.employees = mainService.List();
       $state.go('main');
     }
 

@@ -3,7 +3,7 @@ angular.module('dz4').factory('mainService',['$q',function($q){
   function New(name,surname,position){
 
     var new_employe = validateFields(0,name,surname,position);
-    console.log(new_employe);
+
     if (new_employe){
       return saveNew(new_employe);
     }else{
@@ -42,18 +42,19 @@ angular.module('dz4').factory('mainService',['$q',function($q){
 
   // Private methods
   function saveList(list){
+    
     return localStorage.setItem('employees',JSON.stringify(list));
   }
 
   function saveNew(employee){
     var employees = List();
+
+    employee.id = (employees.length > 0) ? (employees[employees.length-1].id+1) : 0;
+
     console.log(employees);
-    employee.id = employees.length;
     employees[employee.id] = employee;
-    console.log(employee);
 
     var res = saveList(employees);
-    console.log(employees.pop());
     return employee.id;
   }
 

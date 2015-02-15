@@ -17,6 +17,7 @@ angular.module('dz4.main')
 
     $scope.Update = function(){
       var id = mainService.Update($scope.id,$scope.name,$scope.surname,$scope.position);
+      $scope.$parent.employees = mainService.List();
       $state.go('main');
     }
 

@@ -9,6 +9,7 @@ angular.module('dz4.main')
 
     $scope.Create = function(){
       var id = mainService.New($scope.name,$scope.surname,$scope.position);
+      $scope.$parent.employees = mainService.List();
       $state.go('main.update',{id:id});
     }
 
