@@ -1,3 +1,13 @@
-<h2>Update</h2>
-<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+<form class="form-create">
+  <h2 class="form-create-heading">Редактирование сотрудника</h2>
+  <input type="hidden" name="id" ng-model="id"/>
+  <label for="name">Имя</label>
+  <input type="text" id="name" ng-model="name" autocomplete="off" class="form-control" required autofocus>
+  <label for="surname">Фамилия</label>
+  <input type="text" id="surname" ng-model="surname" autocomplete="off" class="form-control" required>
+  <label for="position">Должность</label>
+  <input type="text" id="position" ng-model="position" autocomplete="off" class="form-control" required>
+
+  <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="Update()">Редактировать</button>
+</form>
+

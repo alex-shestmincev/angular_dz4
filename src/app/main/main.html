@@ -1,7 +1,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#/main">Hospital</a>
+      <a class="navbar-brand" href="#/main">Психбольница</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse navbar-right">
       <button ui-sref="login({logout:true})" class="btn btn-success">Exit</button>
@@ -13,19 +13,42 @@
   <!-- Example row of columns -->
   <div class="row">
     <div class="col-md-6">
-      <h2>Personal</h2>
-      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-      <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+      <h2>Персонал психбольницы</h2>
+
+      <div ng-repeat="employee in employees" class="item">
+        <div class="button-right">
+          <a class="btn btn-success" ui-sref="main.update({id:employee.id})" role="button">
+            <span class="glyphicon glyphicon-pencil"></span>
+          </a>
+          <a class="btn btn-danger" href="#" ui-sref="main.delete({id:employee.id})"  role="button">
+            <span class="glyphicon glyphicon-remove"></span>
+          </a>
+        </div>
+        {{employee.name}} {{employee.surname}}
+        <br>
+        <i>{{employee.position}}</i>
+      </div>
+
+
+      <hr>
+
     </div>
 
     <div class="col-md-6" ui-view></div>
   </div>
 
   <hr>
-
+  <div>
+    <button ui-sref="main.create" class="btn btn-success">Add new</button>
+  </div>
+  <hr>
   <footer>
     <p>&copy; Company 2014</p>
   </footer>
 </div>
+
+
+
+
 
 

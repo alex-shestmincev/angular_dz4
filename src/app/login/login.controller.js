@@ -17,6 +17,8 @@ angular.module('dz4.login')
 
       if (res){
         $state.go('main');
+      }else{
+        console.log("bad login");
       }
     }
 

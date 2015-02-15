@@ -24,14 +24,26 @@ angular.module('dz4.main', ['ui.router'])
         }
       })
       .state('main.update', {
-        url: '/update',
+        url: '/update/:id',
         templateUrl: 'app/main/update/update.html',
         controller: 'UpdateCtrl',
         data:{
           permissions: {
             only: ['user']
           }
-        }
+        },
+        params: {'id':false}
+      })
+      .state('main.delete', {
+        url: '/delete/:id',
+        templateUrl: 'app/main/delete/delete.html',
+        controller: 'DeleteCtrl',
+        data:{
+          permissions: {
+            only: ['user']
+          }
+        },
+        params: {'id':false}
       });
 
   });
